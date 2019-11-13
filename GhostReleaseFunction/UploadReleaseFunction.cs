@@ -92,7 +92,8 @@ namespace GhostVersionFunctionApp
             var responseContent = await response.Content.ReadAsStringAsync();
             var releases = JsonConvert.DeserializeObject<List<Release>>(responseContent, SerializerSettings);
 
-            var v2Releases = releases.Where(r => r.Name.StartsWith("2.", StringComparison.OrdinalIgnoreCase)).Select(r => new ReleaseInfo()
+            //var v2Releases = releases.Where(r => r.Name.StartsWith("2.", StringComparison.OrdinalIgnoreCase)).Select(r => new ReleaseInfo()
+            releases = releases.Select( r => new ReleaseInfoInfo()
             {
                 ReleaseName = r.Name,
                 ReleaseNotes = r.Body,
