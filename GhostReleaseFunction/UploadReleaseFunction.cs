@@ -102,7 +102,8 @@ namespace GhostVersionFunctionApp
 
             log.Info($"Available Ghost releases: {releases.Count}.");
 
-            return v2Releases;
+            //return v2Releases;
+            return releases;
         }
 
         [FunctionName("ghost-remaining-releases")]
