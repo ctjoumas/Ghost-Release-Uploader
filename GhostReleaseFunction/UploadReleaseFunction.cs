@@ -93,7 +93,7 @@ namespace GhostVersionFunctionApp
             var releases = JsonConvert.DeserializeObject<List<Release>>(responseContent, SerializerSettings);
 
             //var v2Releases = releases.Where(r => r.Name.StartsWith("2.", StringComparison.OrdinalIgnoreCase)).Select(r => new ReleaseInfo()
-            releases = releases.Select( r => new ReleaseInfoInfo()
+            var availableReleases = releases.Select( r => new ReleaseInfoInfo()
             {
                 ReleaseName = r.Name,
                 ReleaseNotes = r.Body,
@@ -103,7 +103,7 @@ namespace GhostVersionFunctionApp
             log.Info($"Available Ghost releases: {releases.Count}.");
 
             //return v2Releases;
-            return releases;
+            return availableReleases;
         }
 
         [FunctionName("ghost-remaining-releases")]
