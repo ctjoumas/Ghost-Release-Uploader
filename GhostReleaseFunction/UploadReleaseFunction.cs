@@ -114,7 +114,7 @@ namespace GhostVersionFunctionApp
             var (processedRelease, allReleases) = releaseInfo;
 
             var remainingReleases = new List<ReleaseInfo>();
-
+log.Info($"Checking release name: {processedRelease.ReleaseName}");
             if (!string.IsNullOrEmpty(processedRelease.ReleaseName))
             {
                 var i = allReleases.FindIndex(ar => ar.ReleaseName.Equals(processedRelease.ReleaseName, StringComparison.OrdinalIgnoreCase));
