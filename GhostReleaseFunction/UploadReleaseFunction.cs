@@ -109,7 +109,7 @@ namespace GhostVersionFunctionApp
         [FunctionName("ghost-remaining-releases")]
         public static List<ReleaseInfo> DetermineRemainingReleasesAsync([ActivityTrigger]Tuple<ReleaseInfo, List<ReleaseInfo>> releaseInfo, TraceWriter log)
         {
-            log.Info($"Determining new Ghost releases that need processing.");
+            log.Info($"Determining new Ghost releases that need processing - EDIT.");
 
             var (processedRelease, allReleases) = releaseInfo;
 
